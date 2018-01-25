@@ -1,19 +1,17 @@
-package editor
+# scalaui-texteditor
+Example text editor written in Scala with [scalaui](https://www.github.com/lolgab/scalaui) and [reactify](https://www.github.com/outr/reactify)
 
-import java.io.{BufferedWriter, File, FileWriter}
+![How it looks like in elementary](https://image.ibb.co/cMVcgw/editor.png)
 
-import reactify._
-
-import scalaui._
-
+The code is 65 lines only :smiley:
+```scala
 object Editor {
   var path: Var[String] = Var("")
   lazy val s: Var[String] = Var("")
   s.attach { str =>
     textArea.text = str
   }
-
-
+  
   def textOnChange(): Unit = s := textArea.text
   lazy val textArea = new NonWrappingTextArea(textOnChange _)
 
@@ -63,3 +61,4 @@ object Editor {
     scalaui.render(window)
   }
 }
+```
