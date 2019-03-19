@@ -53,7 +53,7 @@ object Editor {
   lazy val saveFile = new MenuItem("Save File", saveFileAction _)
 
   lazy val items = Seq(newFile, openFile, saveFile)
-  lazy val menu = new Menu("File", items)
+  lazy val menu = new Menu("File", items: _*)
 
   lazy val group = new Group(fileName, textArea)
 
